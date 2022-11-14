@@ -1,6 +1,11 @@
+import { useContext } from "react";
+import { AuthContext } from "../../context/authContext";
 import "./rightBar.scss";
 
 const RightBar = () => {
+
+  const { currentUser } = useContext(AuthContext);
+
   return (
     <div className="rightBar">
       <div className="container">
@@ -9,7 +14,7 @@ const RightBar = () => {
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src={`/upload/${currentUser.profilePic}`}
                 alt=""
               />
               <span>Louis Monié</span>
@@ -22,7 +27,7 @@ const RightBar = () => {
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src={`/upload/${currentUser.profilePic}`}
                 alt=""
               />
               <span>Louis Monié</span>
@@ -38,7 +43,7 @@ const RightBar = () => {
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src={`/upload/${currentUser.profilePic}`}
                 alt=""
               />
               <p>
@@ -50,7 +55,7 @@ const RightBar = () => {
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src={`/upload/${currentUser.profilePic}`}
                 alt=""
               />
               <p>
@@ -62,7 +67,7 @@ const RightBar = () => {
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src={`/upload/${currentUser.profilePic}`}
                 alt=""
               />
               <p>
@@ -74,7 +79,7 @@ const RightBar = () => {
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src={`/upload/${currentUser.profilePic}`}
                 alt=""
               />
               <p>
@@ -91,7 +96,7 @@ const RightBar = () => {
             <div className="userInfo">
               <div className="online" />
                 <img
-                  src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                  src={`/upload/${currentUser.profilePic}`}
                   alt=""
                 />
               <span>Louis Monié</span>
@@ -101,7 +106,7 @@ const RightBar = () => {
             <div className="userInfo">
               <div className="online" />
                 <img
-                  src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                  src={`/upload/${currentUser.profilePic}`}
                   alt=""
                 />
               <span>Louis Monié</span>
@@ -111,7 +116,7 @@ const RightBar = () => {
             <div className="userInfo">
               <div className="online" />
                 <img
-                  src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                  src={`/upload/${currentUser.profilePic}`}
                   alt=""
                 />
               <span>Louis Monié</span>
@@ -121,7 +126,7 @@ const RightBar = () => {
             <div className="userInfo">
               <div className="online" />
                 <img
-                  src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                  src={`/upload/${currentUser.profilePic}`}
                   alt=""
                 />
               <span>Louis Monié</span>
@@ -131,7 +136,7 @@ const RightBar = () => {
             <div className="userInfo">
               <div className="online" />
                 <img
-                  src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                  src={`/upload/${currentUser.profilePic}`}
                   alt=""
                 />
               <span>Louis Monié</span>
@@ -141,7 +146,7 @@ const RightBar = () => {
             <div className="userInfo">
               <div className="online" />
                 <img
-                  src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                  src={`/upload/${currentUser.profilePic}`}
                   alt=""
                 />
               <span>Louis Monié</span>
@@ -151,7 +156,7 @@ const RightBar = () => {
             <div className="userInfo">
               <div className="online" />
                 <img
-                  src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                  src={`/upload/${currentUser.profilePic}`}
                   alt=""
                 />
               <span>Louis Monié</span>
@@ -161,7 +166,7 @@ const RightBar = () => {
             <div className="userInfo">
               <div className="online" />
                 <img
-                  src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                  src={`/upload/${currentUser.profilePic}`}
                   alt=""
                 />
               <span>Louis Monié</span>
@@ -171,7 +176,7 @@ const RightBar = () => {
             <div className="userInfo">
               <div className="online" />
                 <img
-                  src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                  src={`/upload/${currentUser.profilePic}`}
                   alt=""
                 />
               <span>Louis Monié</span>
