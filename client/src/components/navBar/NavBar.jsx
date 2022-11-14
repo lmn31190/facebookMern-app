@@ -35,14 +35,17 @@ const NavBar = () => {
         </div>
       </div>
 
-      <div className="right">
+      <div className="right" >
+      <Link to={`/profile/${currentUser.id}`} style={{ textDecoration: "none"}}>
         <PersonOutlinedIcon style={{ cursor: "pointer" }} />
+      </Link>
         <EmailOutlinedIcon style={{ cursor: "pointer" }} />
         <NotificationsOutlinedIcon style={{ cursor: "pointer" }} />
 
         <div className="user">
-          <img src={`/upload/${currentUser.profilePic}`} alt=""
-          />
+        <Link to={`/profile/${currentUser.id}`}>
+          <img src={`/upload/${currentUser.profilePic}`} alt=""/>
+        </Link>
           <span>{currentUser.name}</span>
         </div>
       </div>
