@@ -39,7 +39,11 @@ const Comments = ({ postId }) => {
   return (
     <div className="comments">
       <div className="write">
-        <img src={`/upload/${currentUser.profilePic}`} alt="" />
+      {currentUser.profilePic != null ? (
+                <img src={`/upload/${currentUser.profilePic}`} alt="" />
+              ) : (
+                <img src={`/upload/random-user.png`} alt="" />
+              )}
         <input
           type="text"
           placeholder="Écris un commentaire"
@@ -52,7 +56,11 @@ const Comments = ({ postId }) => {
         ? "Chargement"
         : data.map((comment) => (
             <div className="comment" key={comment.id}>
-              <img src={"/upload/"+comment.profilePic} alt="" />
+              {currentUser.profilePic != null ? (
+                <img src={`/upload/${currentUser.profilePic}`} alt="" />
+              ) : (
+                <img src={`/upload/random-user.png`} alt="" />
+              )}
               <div className="info">
                 <span>{comment.name}</span>
                 <p>{comment.desc}</p>

@@ -50,7 +50,11 @@ const Share = () => {
       <div className="container">
         <div className="top">
           <div className="left">
-            <img src={`/upload/${currentUser.profilePic}`} alt="" />
+          {currentUser.profilePic != null ? (
+                <img src={`/upload/${currentUser.profilePic}`} alt="" />
+              ) : (
+                <img src={`/upload/random-user.png`} alt="" />
+              )}
             <input
               type="text"
               placeholder={`Qu'est-ce qui préoccupe votre esprit ${currentUser.name}?`}

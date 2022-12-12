@@ -31,7 +31,11 @@ const Stories = () => {
   return (
     <div className="stories">
       <div className="story">
-        <img src={`/upload/${currentUser.profilePic}`} alt="" />
+      {currentUser.profilePic != null ? (
+                <img src={`/upload/${currentUser.profilePic}`} alt="" />
+              ) : (
+                <img src={`/upload/random-user.png`} alt="" />
+              )}
         <span>{currentUser.name}</span>
         <button>+</button>
       </div>

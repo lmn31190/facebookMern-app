@@ -24,7 +24,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await login(inputs);
-      navigate("/")
+      setTimeout(() => window.location.replace("/"), 500)
     } catch (err) {
       setErr(err.response.data);
     }

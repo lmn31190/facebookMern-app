@@ -15,6 +15,12 @@ import { AuthContext } from "../../context/authContext";
 const NavBar = () => {
   const { toggle, darkMode } = useContext(DarkModeContext);
   const { currentUser } = useContext(AuthContext);
+  const myStorage = window.localStorage;
+
+  const handleLogout = () => {
+    myStorage.removeItem("user");
+    window.location.reload();
+  }
 
   return (
     <div className="navBar">
@@ -44,9 +50,14 @@ const NavBar = () => {
 
         <div className="user">
         <Link to={`/profile/${currentUser.id}`}>
-          <img src={`/upload/${currentUser.profilePic}`} alt=""/>
+        {currentUser.profilePic != null ? (
+                <img src={`/upload/${currentUser.profilePic}`} alt="" />
+              ) : (
+                <img src={`/upload/random-user.png`} alt="" />
+              )}
         </Link>
           <span>{currentUser.name}</span>
+          <button onClick={handleLogout}>Se déconnecter</button>
         </div>
       </div>
     </div>

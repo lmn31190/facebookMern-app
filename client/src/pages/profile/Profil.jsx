@@ -17,8 +17,7 @@ import { AuthContext } from "../../context/authContext";
 import Update from "../../components/update/Update";
 
 const Profil = () => {
-
-  const [openUpdate, setOpenUpdate] = useState(false)
+  const [openUpdate, setOpenUpdate] = useState(false);
 
   const { currentUser } = useContext(AuthContext);
   const userId = parseInt(useLocation().pathname.split("/")[2]);
@@ -41,7 +40,8 @@ const Profil = () => {
 
   const mutation = useMutation(
     (following) => {
-      if (following) return makeRequest.delete("/relationships?userId=" + userId);
+      if (following)
+        return makeRequest.delete("/relationships?userId=" + userId);
       return makeRequest.post("/relationships", { userId });
     },
     {
@@ -62,8 +62,24 @@ const Profil = () => {
       ) : (
         <>
           <div className="images">
-            <img src={"/upload/"+data.coverPic} alt="" className="cover" />
-            <img src={"/upload/"+data.profilePic} alt="" className="profilePic" />
+            {currentUser.coverPic != null ? (
+              <img src={"/upload/" + data.coverPic} alt="" className="cover" />
+            ) : (
+              <img src={`/upload/random-user.png`} alt="" className="cover" />
+            )}
+            {currentUser.profilePic != null ? (
+              <img
+                src={"/upload/" + data.profilePic}
+                alt=""
+                className="profilePic"
+              />
+            ) : (
+              <img
+                src={`/upload/random-user.png`}
+                alt=""
+                className="profilePic"
+              />
+            )}
           </div>
           <div className="profileContainer">
             <div className="uInfo">
@@ -99,7 +115,9 @@ const Profil = () => {
                 {rIsLoading ? (
                   "Chargement"
                 ) : userId === currentUser.id ? (
-                  <button onClick={() => setOpenUpdate(true)}>Mettre à jour</button>
+                  <button onClick={() => setOpenUpdate(true)}>
+                    Mettre à jour
+                  </button>
                 ) : (
                   <button onClick={handleFollow}>
                     {relationshipData.includes(currentUser.id)
@@ -113,7 +131,7 @@ const Profil = () => {
                 <MoreVertIcon />
               </div>
             </div>
-            <Posts userId={userId}/>
+            <Posts userId={userId} />
           </div>
         </>
       )}
