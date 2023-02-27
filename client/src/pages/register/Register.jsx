@@ -20,7 +20,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:8800/api/auth/register", inputs);
+      await axios.post("https://facebook-app.herokuapp.com//api/auth/register", inputs);
       setTimeout(() => window.location.replace("/login"), 500)
     } catch (err) {
       setErr(err.response.data);
